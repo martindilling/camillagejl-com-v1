@@ -1,0 +1,10 @@
+/bootstrap/compiled.php
+/vendor
+/app/assets/src
+/app/config/local
+/app/database/local.sqlite
+/node_modules
+.env.production.php
+composer.phar
+composer.lock
+.DS_Store

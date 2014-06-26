@@ -1,0 +1,32 @@
+<?php
+
+function create_slug($str) {
+	$clean = iconv('UTF-8', 'ASCII//TRANSLIT', $str);
+	$clean = preg_replace("/[^a-zA-Z0-9\/_| -]/", '', $clean);
+	$clean = strtolower(trim($clean, '-'));
+	$clean = preg_replace("/[\/_| -]+/", '-', $clean);
+
+	return $clean;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Custom Theme Routes
+|--------------------------------------------------------------------------
+|
+| In this file you can over ride any routes and add new ones based on your
+| needs. For information on routing please see the following documentation:
+| http://laravel.com/docs/routing
+| http://laravel.com/docs/controllers
+|
+*/
+
+Route::get('/about', function()
+{
+	return View::make(theme_path('about'));
+});
+
+// Route::get('/tags', function()
+// {
+// 	return View::make(theme_path('tags'));
+// });
